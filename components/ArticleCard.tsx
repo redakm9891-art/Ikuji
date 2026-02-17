@@ -12,7 +12,7 @@ export default function ArticleCard({ article }: { article: ArticleMetadata }) {
             src={article.coverImage}
             alt={article.title}
             fill
-            className="object-contain"
+            className="object-cover"
           />
         </div>
       </Link>

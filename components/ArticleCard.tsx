@@ -7,12 +7,12 @@ export default function ArticleCard({ article }: { article: ArticleMetadata }) {
   return (
     <article className="bg-white rounded-2xl shadow-sm border border-pink-100 overflow-hidden hover:shadow-md transition-shadow">
       <Link href={`/articles/${article.slug}`}>
-        <div className="relative h-48 bg-pink-50">
+        <div className="relative h-56 bg-pink-50 p-3">
           <Image
             src={article.coverImage}
             alt={article.title}
             fill
-            className="object-cover"
+            className="object-contain p-2"
           />
         </div>
       </Link>

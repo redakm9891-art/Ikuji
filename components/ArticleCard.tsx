@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArticleMetadata } from "@/lib/types";
 import CategoryBadge from "./CategoryBadge";
@@ -6,8 +7,13 @@ export default function ArticleCard({ article }: { article: ArticleMetadata }) {
   return (
     <article className="bg-white rounded-2xl shadow-sm border border-pink-100 overflow-hidden hover:shadow-md transition-shadow">
       <Link href={`/articles/${article.slug}`}>
-        <div className="h-48 bg-gradient-to-br from-pink-200 to-blue-200 flex items-center justify-center">
-          <span className="text-4xl">{getCategoryEmoji(article.category)}</span>
+        <div className="relative h-48 bg-pink-50">
+          <Image
+            src={article.coverImage}
+            alt={article.title}
+            fill
+            className="object-contain"
+          />
         </div>
       </Link>
       <div className="p-5">
